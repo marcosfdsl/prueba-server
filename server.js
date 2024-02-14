@@ -1,3 +1,4 @@
+// server.js
 import express from 'express';
 import { createServer } from "http";
 import { Server } from "socket.io";
@@ -31,8 +32,10 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(8080, () => {
-  console.log("Servidor corriendo en http://localhost:8080");
+// Escucha en el puerto proporcionado por el entorno, o en el puerto 8080 si no se proporciona
+const puerto = process.env.PORT || 8080;
+server.listen(puerto, () => {
+  console.log("Servidor corriendo en el puerto " + puerto);
 });
 
 export { server, io };
