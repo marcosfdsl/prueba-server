@@ -31,8 +31,8 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
-  console.log("Servidor corriendo en http://localhost:3000");
+server.listen(8080, () => {
+  console.log("Servidor corriendo en http://localhost:8080");
 });
 
 export { server, io };
